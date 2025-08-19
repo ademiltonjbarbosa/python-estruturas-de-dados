@@ -38,7 +38,7 @@ class FilaIngresso:
             atual = self.primeiro.proximo
             while atual != None:
                 if atual == nomeCliente:
-                anterior.proximo = anterior.proximo.
+                anterior.proximo = anterior.proximo
         
  
 

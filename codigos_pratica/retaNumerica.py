@@ -56,19 +56,24 @@ class RetaNumerica:
     def removerNumero(self,valor):
         # Testar se a lista esta vazia
         if self.primeiro == None:
-            print("A lista esta vazia")
+            return False
         # Testar se o valor procurado é o primeiro da lista
-        elif self.primeiro == valor:
+        if self.primeiro.valor == valor:
             self.primeiro = self.primeiro.proximo
-        else:
-            anterior = None
-            atual = self.primeiro
-            while atual is not None:
-               if atual.valor == valor:
+            return True
+        
+        anterior = self.primeiro
+        atual =self.primeiro.proximo
+        while atual is not None:
+            if atual.valor == valor:
                 anterior.proximo = atual.proximo
                 return True
             anterior = atual
             atual = atual.proximo
+
+        return False
+        
+      
     # Funcao que diz quem é o maior valor da lista
     def maior(self):
         if self.primeiro == None:
@@ -107,11 +112,14 @@ lista.inserirNoFim(20)
 # lista.inserirNoInicio(1)
 # lista.inserirNoInicio(17)
 # lista.inserirNoInicio(12)
+lista.exibirLista()
+lista.removerNumero(23)
+
 
 
 
 lista.exibirLista()
-lista.maior()
+# lista.maior()
 #print(lista.buscarNumero(9))
 
 #lista.tamanhoDaReta()
