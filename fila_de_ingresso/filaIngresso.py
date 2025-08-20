@@ -27,18 +27,7 @@ class FilaIngresso:
         print(" ")
 
     #Funcao que em teoria remove o cliente da fila
-    def removerCliente(self,nomeCliente):
-        if self.primeiro is None:
-            return False
-        if self.primeiro == nomeCliente:
-            self.primeiro = self.primeiro.proximo
-            return True
-        else:
-            anterior = self.primeiro
-            atual = self.primeiro.proximo
-            while atual != None:
-                if atual == nomeCliente:
-                anterior.proximo = anterior.proximo
+  
         
  
 
