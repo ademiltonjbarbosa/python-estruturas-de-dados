@@ -4,6 +4,14 @@ class ListaDuplamenteEncadeada:
     def __init__(self):
         self.inicio = None
         self.fim = None
+
+    # Funcao que diz se a lista esta vazia ou nao
+    def listaVazia(self):
+        if self.inicio is None:
+            return True
+        else:
+            return False
+        
     # Funcao que insere no inicio da lista
     def inserirNoInicio(self,valor):
         novoNo = NoDuplo(valor)
@@ -35,6 +43,19 @@ class ListaDuplamenteEncadeada:
                 print(aux.valor)
                 aux = aux.proximo
 
+    
+    # Funcao que verifique se existe um valor especifico na lista
+    def buscarValor(self,valorBuscado):
+        if self.inicio is None:
+            return False
+        
+        aux = self.inicio
+        while aux is not None:
+            if aux.valor == valorBuscado:
+                return True
+            aux = aux.proximo
+        return False
+
 
 # ==================================================
 
@@ -46,4 +67,5 @@ lde1.inserirNoInicio(0)
 lde1.inserirNoInicio(-1)
 
 lde1.exibirLista()
+print(lde1.buscarValor(3))
             
